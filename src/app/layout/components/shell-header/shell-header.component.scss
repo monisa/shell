@@ -1,0 +1,77 @@
+.shell-header {
+  align-items: center;
+  background: var(--octa-components-header-background, var(--octa-colors-surface, #ffffff));
+  border-bottom: 1px solid var(--octa-components-header-border, rgba(0, 0, 0, 0.08));
+  display: flex;
+  justify-content: space-between;
+  padding: 0 1.5rem;
+}
+
+.shell-header__brand {
+  align-items: center;
+  display: flex;
+  gap: 1rem;
+}
+
+.shell-header__logo {
+  height: 32px;
+  width: auto;
+}
+
+.shell-header__app-name {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.shell-header__app-desc {
+  color: var(--octa-colors-on-surface-muted, #6b7280);
+  font-size: 0.85rem;
+  margin: 0;
+}
+
+.shell-header__actions {
+  align-items: center;
+  display: flex;
+  gap: 0.75rem;
+}
+
+.shell-header__notifications {
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  height: 40px;
+  width: 40px;
+}
+
+.shell-header__notifications-count {
+  background: var(--octa-colors-primary, #2563eb);
+  border-radius: 999px;
+  color: #fff;
+  font-size: 0.65rem;
+  padding: 0 6px;
+}
+
+.shell-header__user {
+  align-items: center;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.shell-header__avatar {
+  border-radius: 50%;
+  height: 36px;
+  width: 36px;
+}
+
+.shell-header__user-name,
+.shell-header__user-title {
+  margin: 0;
+}
+
+.shell-header__user-title {
+  color: var(--octa-colors-on-surface-muted, #94a3b8);
+  font-size: 0.75rem;
+}

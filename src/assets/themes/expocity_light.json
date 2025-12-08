@@ -1,0 +1,96 @@
+{
+  "meta": {
+    "tenant": "expocity",
+    "name": "Expocity Retail",
+    "version": "1.0.0",
+    "mode": "light",
+    "updatedAt": "2025-01-05T00:00:00.000Z"
+  },
+  "colors": {
+    "background": "#F8F5FF",
+    "surface": "#FFFFFF",
+    "surface-muted": "#F3E8FF",
+    "on-surface": "#1D0F2B",
+    "on-surface-muted": "#5B5563",
+    "outline": "#DDD6FE",
+    "primary": "#6D28D9",
+    "primary-hover": "#5B21B6",
+    "secondary": "#9333EA",
+    "accent": "#F472B6",
+    "success": "#22C55E",
+    "danger": "#F87171"
+  },
+  "typography": {
+    "font-family-base": "'Inter', system-ui, sans-serif",
+    "font-family-headings": "'Clash Display', 'Inter', sans-serif",
+    "font-weight-bold": 600,
+    "line-height-base": 1.5,
+    "font-size-base": "16px"
+  },
+  "spacing": {
+    "xs": "4px",
+    "sm": "10px",
+    "md": "18px",
+    "lg": "28px",
+    "xl": "40px"
+  },
+  "radius": {
+    "sm": "8px",
+    "md": "14px",
+    "lg": "20px",
+    "pill": "999px"
+  },
+  "layout": {
+    "sidebar-width": "300px",
+    "header-height": "68px",
+    "content-max-width": "1400px"
+  },
+  "components": {
+    "header": {
+      "background": "#FFFFFF",
+      "border": "#E9D5FF"
+    },
+    "sidebar": {
+      "background": "#1E1B4B",
+      "text": "#EDE9FE",
+      "item-hover": "rgba(109, 40, 217, 0.25)"
+    },
+    "toggle": {
+      "background": "rgba(109, 40, 217, 0.1)",
+      "hover": "rgba(109, 40, 217, 0.25)",
+      "border": "transparent"
+    }
+  },
+  "icons": {
+    "dashboard": {
+      "type": "svg",
+      "value": "assets/icons/expocity/dashboard.svg"
+    },
+    "operations": {
+      "type": "svg",
+      "value": "assets/icons/expocity/operations.svg"
+    },
+    "reports": {
+      "type": "svg",
+      "value": "assets/icons/expocity/reports.svg"
+    },
+    "settings": {
+      "type": "svg",
+      "value": "assets/icons/expocity/settings.svg"
+    },
+    "alerts": {
+      "type": "svg",
+      "value": "assets/icons/expocity/alerts.svg"
+    }
+  },
+  "logos": {
+    "main": {
+      "type": "svg",
+      "value": "assets/logos/expocity-logo.svg"
+    },
+    "mark": {
+      "type": "svg",
+      "value": "assets/logos/expocity-mark.svg"
+    }
+  }
+}

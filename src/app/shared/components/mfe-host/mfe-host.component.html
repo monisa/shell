@@ -1,0 +1,17 @@
+<section class="mfe-host" [attr.data-status]="status()">
+  <header class="mfe-host__header">
+    <div>
+      <h2>{{ title() }}</h2>
+      <p>Loaded as Web Component via Module Federation</p>
+    </div>
+    <span class="mfe-host__status">{{ status() }}</span>
+  </header>
+
+  @if (status() === 'error') {
+    <div class="mfe-host__error">
+      {{ error() }}
+    </div>
+  }
+
+  <div class="mfe-host__mount" #mount [hidden]="status() === 'error'"></div>
+</section>

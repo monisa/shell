@@ -1,0 +1,19 @@
+{
+  "meta": {
+    "tenant": "fallback",
+    "name": "Fallback",
+    "version": "0.0.1",
+    "mode": "light",
+    "updatedAt": "2025-01-01T00:00:00.000Z"
+  },
+  "colors": {
+    "background": "#FFFFFF",
+    "surface": "#FFFFFF",
+    "on-surface": "#111827",
+    "primary": "#2563EB"
+  },
+  "typography": {
+    "font-family-base": "system-ui",
+    "font-size-base": "16px"
+  }
+}

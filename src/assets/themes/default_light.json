@@ -1,0 +1,54 @@
+{
+  "meta": {
+    "tenant": "default",
+    "name": "Octa Default",
+    "version": "1.0.0",
+    "mode": "light",
+    "updatedAt": "2025-01-05T00:00:00.000Z"
+  },
+  "colors": {
+    "background": "#F8FAFC",
+    "surface": "#FFFFFF",
+    "surface-muted": "#F1F5F9",
+    "on-surface": "#0F172A",
+    "on-surface-muted": "#475467",
+    "outline": "#E2E8F0",
+    "primary": "#2563EB",
+    "primary-hover": "#1D4ED8",
+    "secondary": "#64748B",
+    "accent": "#F97316",
+    "success": "#059669",
+    "danger": "#DC2626"
+  },
+  "typography": {
+    "font-family-base": "'Inter', system-ui, sans-serif",
+    "font-family-headings": "'Inter', system-ui, sans-serif",
+    "font-weight-bold": 600,
+    "line-height-base": 1.5,
+    "font-size-base": "16px"
+  },
+  "spacing": {
+    "xs": "4px",
+    "sm": "8px",
+    "md": "16px",
+    "lg": "24px",
+    "xl": "32px"
+  },
+  "radius": {
+    "sm": "6px",
+    "md": "12px",
+    "lg": "18px",
+    "pill": "999px"
+  },
+  "layout": {
+    "sidebar-width": "280px",
+    "header-height": "64px"
+  },
+  "icons": {},
+  "logos": {
+    "main": {
+      "type": "svg",
+      "value": "assets/logos/octa-logo.svg"
+    }
+  }
+}

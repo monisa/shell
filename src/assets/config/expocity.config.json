@@ -1,0 +1,97 @@
+{
+  "tenant": "expocity",
+  "appName": "Expocity Experience Hub",
+  "configVersion": "2025.01.0",
+  "layout": {
+    "sidebar": "left",
+    "sidebarWidth": "300px",
+    "footerText": "Expocity Retail Cloud",
+    "showNotifications": true
+  },
+  "defaultTheme": {
+    "defaultMode": "dark",
+    "cacheVersion": "2025.01.0",
+    "lightThemeUrl": "assets/themes/expocity_light.json",
+    "darkThemeUrl": "assets/themes/expocity_dark.json",
+    "fallbackLightThemeUrl": "assets/themes/fallback_light.json",
+    "fallbackDarkThemeUrl": "assets/themes/fallback_dark.json"
+  },
+  "menu": [
+    {
+      "id": "dashboard",
+      "label": "Dashboard",
+      "route": "/",
+      "icon": "dashboard"
+    },
+    {
+      "id": "experiences",
+      "label": "Experiences",
+      "route": "/mfe/experiences",
+      "icon": "operations",
+      "mfeId": "experiences"
+    },
+    {
+      "id": "analytics",
+      "label": "Analytics",
+      "route": "/mfe/analytics",
+      "icon": "reports",
+      "mfeId": "analytics"
+    },
+    {
+      "id": "alerts",
+      "label": "Alerts",
+      "route": "/mfe/alerts",
+      "icon": "alerts",
+      "mfeId": "alerts"
+    },
+    {
+      "id": "settings",
+      "label": "Settings",
+      "route": "/mfe/settings",
+      "icon": "settings",
+      "mfeId": "settings"
+    }
+  ],
+  "mfeRegistry": [
+    {
+      "id": "experiences",
+      "displayName": "Experience Builder",
+      "type": "web-component",
+      "tagName": "xp-experience-app"
+    },
+    {
+      "id": "analytics",
+      "displayName": "Retail Analytics",
+      "type": "web-component",
+      "tagName": "xp-analytics-app"
+    },
+    {
+      "id": "alerts",
+      "displayName": "Alert Center",
+      "type": "web-component",
+      "tagName": "xp-alerts-app"
+    },
+    {
+      "id": "settings",
+      "displayName": "Workspace Settings",
+      "type": "web-component",
+      "tagName": "xp-settings-app"
+    }
+  ],
+  "notifications": [
+    {
+      "id": "campaign",
+      "level": "info",
+      "message": "New brand assets available for download",
+      "ctaLabel": "Open library",
+      "ctaUrl": "https://design.octa.io"
+    }
+  ],
+  "developer": {
+    "fallbackTheme": "dark",
+    "dummyUser": {
+      "name": "Jon Reyes",
+      "title": "Experience Strategist"
+    }
+  }
+}

@@ -1,0 +1,65 @@
+.shell-sidebar {
+  background: var(--octa-components-sidebar-background, #0f172a);
+  color: var(--octa-components-sidebar-text, #e2e8f0);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 1.5rem 1rem;
+  width: var(--octa-layout-sidebar-width, 280px);
+}
+
+.shell-sidebar__brand {
+  align-items: center;
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+}
+
+.shell-sidebar__brand img {
+  height: 32px;
+  width: auto;
+}
+
+.shell-sidebar__nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.shell-sidebar__nav li {
+  margin-bottom: 0.5rem;
+}
+
+.shell-sidebar__nav a {
+  align-items: center;
+  border-radius: 10px;
+  color: inherit;
+  display: flex;
+  font-weight: 500;
+  gap: 0.75rem;
+  padding: 0.65rem 0.75rem;
+  text-decoration: none;
+  transition: background 0.2s ease;
+}
+
+.shell-sidebar__nav a:hover,
+.shell-sidebar__nav a.active {
+  background: var(--octa-components-sidebar-item-hover, rgba(255, 255, 255, 0.1));
+}
+
+.shell-sidebar .icon {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 20px;
+  display: inline-flex;
+  height: 20px;
+  width: 20px;
+}
+
+.shell-sidebar .badge {
+  background: var(--octa-colors-primary, #2563eb);
+  border-radius: 999px;
+  font-size: 0.65rem;
+  margin-left: auto;
+  padding: 0 0.5rem;
+}

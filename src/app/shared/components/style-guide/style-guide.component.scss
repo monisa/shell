@@ -1,0 +1,19 @@
+.style-guide {
+  background: var(--octa-colors-surface, #fff);
+  border: 1px solid var(--octa-borders-card, rgba(0, 0, 0, 0.08));
+  border-radius: 16px;
+  padding: 1.5rem;
+}
+
+.style-guide__grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+}
+
+.swatch {
+  background: var(--swatch-color, #000);
+  border-radius: 12px;
+  height: 80px;
+  margin-bottom: 0.5rem;
+}

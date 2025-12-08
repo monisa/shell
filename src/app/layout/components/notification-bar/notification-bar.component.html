@@ -1,0 +1,15 @@
+<section class="notification-bar" *ngIf="notifications.length">
+  @for (notification of notifications; track notification.id) {
+    <div class="notification" [attr.data-level]="notification.level">
+      <span>{{ notification.message }}</span>
+      <a
+        *ngIf="notification.ctaUrl && notification.ctaLabel"
+        [href]="notification.ctaUrl"
+        target="_blank"
+        rel="noopener"
+      >
+        {{ notification.ctaLabel }} →
+      </a>
+    </div>
+  }
+</section>

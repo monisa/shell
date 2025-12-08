@@ -1,0 +1,25 @@
+<aside class="shell-sidebar">
+  <div class="shell-sidebar__brand">
+    <img *ngIf="logoUrl" [src]="logoUrl" [alt]="appName" />
+    <span>{{ appName }}</span>
+  </div>
+
+  <nav class="shell-sidebar__nav">
+    <ul>
+      @for (item of menu; track item.id) {
+        <li>
+          <a
+            [routerLink]="item.route"
+            routerLinkActive="active"
+            (click)="onNavigate(item)"
+            [attr.target]="item.external ? '_blank' : null"
+          >
+            <span class="icon" [style.background-image]="iconVar(item.icon)"></span>
+            <span>{{ item.label }}</span>
+            <span class="badge" *ngIf="item.badge">{{ item.badge }}</span>
+          </a>
+        </li>
+      }
+    </ul>
+  </nav>
+</aside>

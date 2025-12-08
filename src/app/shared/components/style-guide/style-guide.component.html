@@ -1,0 +1,12 @@
+<section class="style-guide">
+  <h2>Theme tokens preview</h2>
+  <div class="style-guide__grid">
+    @for (color of colors(); track color[0]) {
+      <article>
+        <div class="swatch" [style.--swatch-color]="color[1]"></div>
+        <p>{{ color[0] }}</p>
+        <small>{{ color[1] }}</small>
+      </article>
+    }
+  </div>
+</section>
