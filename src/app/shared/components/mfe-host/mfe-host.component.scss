@@ -1,0 +1,44 @@
+.mfe-host {
+  background: var(--octa-colors-surface, #ffffff);
+  border: 1px solid var(--octa-borders-card, rgba(0, 0, 0, 0.08));
+  border-radius: var(--octa-radius-lg, 16px);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 420px;
+  padding: 1.5rem;
+}
+
+.mfe-host__header {
+  align-items: center;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+}
+
+.mfe-host__status {
+  background: var(--octa-colors-primary, #2563eb);
+  border-radius: 999px;
+  color: #fff;
+  font-size: 0.75rem;
+  padding: 0.25rem 0.75rem;
+  text-transform: capitalize;
+}
+
+.mfe-host__error {
+  align-items: center;
+  background: rgba(248, 113, 113, 0.1);
+  border: 1px solid rgba(248, 113, 113, 0.4);
+  border-radius: 12px;
+  color: #b91c1c;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+.mfe-host__mount {
+  flex: 1;
+  min-height: 300px;
+}

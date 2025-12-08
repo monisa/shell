@@ -1,0 +1,35 @@
+{
+  "tenant": "default",
+  "appName": "Octa Shell",
+  "configVersion": "2025.01.0",
+  "layout": {
+    "sidebar": "left",
+    "sidebarWidth": "280px",
+    "footerText": "Octa Platform",
+    "showNotifications": false
+  },
+  "defaultTheme": {
+    "defaultMode": "light",
+    "cacheVersion": "2025.01.0",
+    "lightThemeUrl": "assets/themes/default_light.json",
+    "darkThemeUrl": "assets/themes/default_dark.json",
+    "fallbackLightThemeUrl": "assets/themes/fallback_light.json",
+    "fallbackDarkThemeUrl": "assets/themes/fallback_dark.json"
+  },
+  "menu": [
+    {
+      "id": "dashboard",
+      "label": "Dashboard",
+      "route": "/",
+      "icon": "dashboard"
+    }
+  ],
+  "mfeRegistry": [],
+  "developer": {
+    "fallbackTheme": "light",
+    "dummyUser": {
+      "name": "Octa Admin",
+      "title": "Platform Owner"
+    }
+  }
+}

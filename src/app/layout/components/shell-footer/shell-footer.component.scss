@@ -1,0 +1,9 @@
+.shell-footer {
+  align-items: center;
+  border-top: 1px solid var(--octa-components-footer-border, rgba(0, 0, 0, 0.06));
+  color: var(--octa-components-footer-text, #475467);
+  display: flex;
+  font-size: 0.8rem;
+  justify-content: space-between;
+  padding: 0.75rem 1.5rem;
+}

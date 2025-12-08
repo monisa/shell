@@ -1,0 +1,33 @@
+.notification-bar {
+  background: var(--octa-components-notification-background, #fef2c0);
+  border-bottom: 1px solid var(--octa-components-notification-border, rgba(0, 0, 0, 0.05));
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: space-between;
+  padding: 0.5rem 1.5rem;
+}
+
+.notification {
+  align-items: center;
+  display: flex;
+  gap: 0.75rem;
+}
+
+.notification[data-level='warning'] {
+  color: #b45309;
+}
+
+.notification[data-level='error'] {
+  color: #b91c1c;
+}
+
+.notification[data-level='success'] {
+  color: #047857;
+}
+
+.notification a {
+  color: inherit;
+  font-weight: 600;
+  text-decoration: none;
+}

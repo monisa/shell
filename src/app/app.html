@@ -1,0 +1,32 @@
+@if (notifications().length) {
+  <octa-notification-bar [notifications]="notifications()"></octa-notification-bar>
+}
+
+<div class="app-shell">
+  <octa-shell-sidebar
+    class="app-shell__sidebar"
+    [menu]="menu()"
+    [logoUrl]="logoUrl()"
+    [appName]="appName()"
+    (itemSelected)="onMenuSelected($event)"
+  ></octa-shell-sidebar>
+
+  <div class="app-shell__content">
+    <octa-shell-header
+      [appName]="appName()"
+      [logoUrl]="logoUrl()"
+      [notifications]="notifications()"
+      [notificationCount]="notifications().length"
+      [user]="user() ?? undefined"
+    ></octa-shell-header>
+
+    <main class="app-shell__viewport">
+      <router-outlet />
+    </main>
+
+    <octa-shell-footer
+      [text]="layout()?.footerText ?? 'Octa multi-tenant shell'"
+      [version]="config()?.configVersion ?? 'local'"
+    ></octa-shell-footer>
+  </div>
+</div>

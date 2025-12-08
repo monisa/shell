@@ -1,0 +1,109 @@
+{
+  "tenant": "khidmah",
+  "appName": "Khidmah Command Center",
+  "logoAlt": "Khidmah",
+  "description": "Facilities intelligence for enterprise campuses",
+  "configVersion": "2025.01.0",
+  "layout": {
+    "sidebar": "left",
+    "sidebarWidth": "280px",
+    "footerText": "Khidmah © 2025",
+    "showNotifications": true
+  },
+  "defaultTheme": {
+    "defaultMode": "light",
+    "cacheVersion": "2025.01.0",
+    "lightThemeUrl": "assets/themes/khidmah_light.json",
+    "darkThemeUrl": "assets/themes/khidmah_dark.json",
+    "fallbackLightThemeUrl": "assets/themes/fallback_light.json",
+    "fallbackDarkThemeUrl": "assets/themes/fallback_dark.json"
+  },
+  "menu": [
+    {
+      "id": "dashboard",
+      "label": "Overview",
+      "route": "/",
+      "icon": "dashboard"
+    },
+    {
+      "id": "operations",
+      "label": "Operations",
+      "route": "/mfe/operations",
+      "icon": "operations",
+      "badge": "MFE",
+      "mfeId": "operations"
+    },
+    {
+      "id": "reports",
+      "label": "Reports",
+      "route": "/mfe/reports",
+      "icon": "reports",
+      "mfeId": "reports"
+    },
+    {
+      "id": "alerts",
+      "label": "Alerts",
+      "route": "/mfe/alerts",
+      "icon": "alerts",
+      "mfeId": "alerts"
+    },
+    {
+      "id": "settings",
+      "label": "Settings",
+      "route": "/mfe/settings",
+      "icon": "settings",
+      "mfeId": "settings"
+    }
+  ],
+  "mfeRegistry": [
+    {
+      "id": "operations",
+      "displayName": "Operations Console",
+      "type": "web-component",
+      "tagName": "kh-operations-app",
+      "remoteEntry": "https://cdn.example.com/khidmah/operations/remoteEntry.js",
+      "localDev": {
+        "remoteEntry": "http://localhost:4301/remoteEntry.js"
+      }
+    },
+    {
+      "id": "reports",
+      "displayName": "Insights & Reports",
+      "type": "web-component",
+      "tagName": "kh-reports-app",
+      "remoteEntry": "https://cdn.example.com/khidmah/reports/remoteEntry.js",
+      "localDev": {
+        "remoteEntry": "http://localhost:4302/remoteEntry.js"
+      }
+    },
+    {
+      "id": "alerts",
+      "displayName": "Alert Center",
+      "type": "web-component",
+      "tagName": "kh-alerts-app"
+    },
+    {
+      "id": "settings",
+      "displayName": "Tenant Settings",
+      "type": "web-component",
+      "tagName": "kh-settings-app"
+    }
+  ],
+  "notifications": [
+    {
+      "id": "maintenance-window",
+      "level": "warning",
+      "message": "Scheduled maintenance tonight 23:00 GST",
+      "ctaLabel": "View plan",
+      "ctaUrl": "https://status.octa.io"
+    }
+  ],
+  "developer": {
+    "fallbackTheme": "light",
+    "dummyUser": {
+      "name": "Lana Youssef",
+      "title": "Tenant Admin",
+      "avatarUrl": "https://avatars.githubusercontent.com/u/9919?v=4"
+    }
+  }
+}

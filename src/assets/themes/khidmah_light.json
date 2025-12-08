@@ -1,0 +1,96 @@
+{
+  "meta": {
+    "tenant": "khidmah",
+    "name": "Khidmah Facilities",
+    "version": "1.0.0",
+    "mode": "light",
+    "updatedAt": "2025-01-05T00:00:00.000Z"
+  },
+  "colors": {
+    "background": "#F5FAF8",
+    "surface": "#FFFFFF",
+    "surface-muted": "#EDF6F3",
+    "on-surface": "#0F172A",
+    "on-surface-muted": "#475467",
+    "outline": "#D0D5DD",
+    "primary": "#0F766E",
+    "primary-hover": "#115E59",
+    "secondary": "#0E7490",
+    "accent": "#059669",
+    "success": "#16A34A",
+    "danger": "#DC2626"
+  },
+  "typography": {
+    "font-family-base": "'Inter', system-ui, sans-serif",
+    "font-family-headings": "'Space Grotesk', 'Inter', sans-serif",
+    "font-weight-bold": 600,
+    "line-height-base": 1.5,
+    "font-size-base": "16px"
+  },
+  "spacing": {
+    "xs": "4px",
+    "sm": "8px",
+    "md": "16px",
+    "lg": "24px",
+    "xl": "32px"
+  },
+  "radius": {
+    "sm": "6px",
+    "md": "12px",
+    "lg": "18px",
+    "pill": "999px"
+  },
+  "layout": {
+    "sidebar-width": "280px",
+    "header-height": "64px",
+    "content-max-width": "1280px"
+  },
+  "components": {
+    "header": {
+      "background": "#FFFFFF",
+      "border": "#E4E7EC"
+    },
+    "sidebar": {
+      "background": "#0F172A",
+      "text": "#E2E8F0",
+      "item-hover": "rgba(15, 118, 110, 0.2)"
+    },
+    "toggle": {
+      "background": "#E2E8F0",
+      "hover": "rgba(15, 118, 110, 0.2)",
+      "border": "transparent"
+    }
+  },
+  "icons": {
+    "dashboard": {
+      "type": "svg",
+      "value": "assets/icons/khidmah/dashboard.svg"
+    },
+    "operations": {
+      "type": "svg",
+      "value": "assets/icons/khidmah/operations.svg"
+    },
+    "reports": {
+      "type": "svg",
+      "value": "assets/icons/khidmah/reports.svg"
+    },
+    "settings": {
+      "type": "svg",
+      "value": "assets/icons/khidmah/settings.svg"
+    },
+    "alerts": {
+      "type": "svg",
+      "value": "assets/icons/khidmah/alerts.svg"
+    }
+  },
+  "logos": {
+    "main": {
+      "type": "svg",
+      "value": "assets/logos/khidmah-logo.svg"
+    },
+    "mark": {
+      "type": "svg",
+      "value": "assets/logos/khidmah-mark.svg"
+    }
+  }
+}
