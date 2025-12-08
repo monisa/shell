@@ -16,6 +16,13 @@
     "fallbackLightThemeUrl": "assets/themes/fallback_light.json",
     "fallbackDarkThemeUrl": "assets/themes/fallback_dark.json"
   },
+  "branding": {
+    "primaryColor": "#6D28D9",
+    "secondaryColor": "#9333EA",
+    "fontFamily": "'Inter', system-ui, sans-serif",
+    "fontSize": "16px",
+    "logoUrl": "assets/logos/expocity-logo.svg"
+  },
   "menu": [
     {
       "id": "dashboard",

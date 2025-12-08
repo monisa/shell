@@ -31,7 +31,7 @@ export class AppComponent {
   protected readonly user = computed(() => this.config()?.developer?.dummyUser ?? null);
   protected readonly logoUrl = computed(() => {
     const logos = this.themeService.logos();
-    return logos['main']?.value ?? this.config()?.logoAlt ?? '';
+    return logos['main']?.value ?? this.config()?.branding?.logoUrl ?? '';
   });
 
   constructor() {

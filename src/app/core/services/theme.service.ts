@@ -3,7 +3,7 @@ import { DOCUMENT } from '@angular/common';
 import { Injectable, Signal, WritableSignal, computed, inject, signal } from '@angular/core';
 import { firstValueFrom } from 'rxjs';
 
-import { ShellConfig, ShellThemeConfig } from '../models/shell-config.model';
+import { ShellBrandingConfig, ShellConfig, ShellThemeConfig } from '../models/shell-config.model';
 import {
   ThemeAsset,
   ThemeCacheEntry,
@@ -33,6 +33,7 @@ export class ThemeService {
   private readonly tenantSignal: WritableSignal<string> = signal('default');
   private readonly iconSignal: WritableSignal<Record<string, ThemeAsset>> = signal({});
   private readonly logoSignal: WritableSignal<Record<string, ThemeAsset>> = signal({});
+  private brandingOverrides?: ShellBrandingConfig;
 
   readonly currentTheme: Signal<ThemeDefinition | null> = this.themeSignal.asReadonly();
   readonly currentMode: Signal<ThemeMode> = this.modeSignal.asReadonly();
@@ -46,6 +47,8 @@ export class ThemeService {
 
   async init(config: ShellConfig): Promise<void> {
     this.tenantSignal.set(config.tenant);
+    this.brandingOverrides = config.branding;
+    this.applyBrandingOverrides();
     const initialMode =
       this.storage.getItem<ThemeMode>(MODE_STORAGE_KEY) ?? config.defaultTheme.defaultMode;
     this.modeSignal.set(initialMode);
@@ -135,6 +138,7 @@ export class ThemeService {
     this.iconSignal.set(theme.icons ?? {});
     this.logoSignal.set(theme.logos ?? {});
     this.applyCssVariables(theme);
+    this.applyBrandingOverrides();
     this.setDocumentMode(theme.meta.mode);
   }
 
@@ -179,6 +183,65 @@ export class ThemeService {
       const cssValue = this.toCssAssetValue(asset);
       root.style.setProperty(cssVarName, cssValue);
     });
+  }
+
+  private applyBrandingOverrides(): void {
+    if (!this.brandingOverrides) {
+      return;
+    }
+
+    const root = this.document?.documentElement;
+    if (!root) {
+      return;
+    }
+    const { primaryColor, secondaryColor, fontFamily, fontSize, logoUrl } = this.brandingOverrides;
+
+    if (primaryColor) {
+      root.style.setProperty('--octa-colors-primary', primaryColor);
+    }
+
+    if (secondaryColor) {
+      root.style.setProperty('--octa-colors-secondary', secondaryColor);
+    }
+
+    if (fontFamily) {
+      root.style.setProperty('--octa-typography-font-family-base', fontFamily);
+      root.style.setProperty('--octa-typography-font-family-headings', fontFamily);
+      root.style.setProperty('font-family', fontFamily);
+    }
+
+    if (fontSize) {
+      root.style.setProperty('--octa-typography-font-size-base', fontSize);
+    }
+
+    if (logoUrl) {
+      const currentLogos = { ...(this.logoSignal() ?? {}) };
+      currentLogos['main'] = {
+        type: this.detectAssetType(logoUrl),
+        value: logoUrl
+      };
+      this.logoSignal.set(currentLogos);
+    }
+  }
+
+  private detectAssetType(path: string): ThemeAsset['type'] {
+    if (path.startsWith('data:')) {
+      return 'data-uri';
+    }
+
+    const extension = path.split('.').pop()?.toLowerCase();
+    switch (extension) {
+      case 'svg':
+        return 'svg';
+      case 'png':
+        return 'png';
+      case 'webp':
+        return 'webp';
+      case 'json':
+        return 'json';
+      default:
+        return 'svg';
+    }
   }
 
   private toCssAssetValue(asset: ThemeAsset): string {
