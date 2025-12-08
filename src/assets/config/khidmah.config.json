@@ -18,6 +18,13 @@
     "fallbackLightThemeUrl": "assets/themes/fallback_light.json",
     "fallbackDarkThemeUrl": "assets/themes/fallback_dark.json"
   },
+  "branding": {
+    "primaryColor": "#0F766E",
+    "secondaryColor": "#0E7490",
+    "fontFamily": "'Inter', system-ui, sans-serif",
+    "fontSize": "16px",
+    "logoUrl": "assets/logos/khidmah-logo.svg"
+  },
   "menu": [
     {
       "id": "dashboard",

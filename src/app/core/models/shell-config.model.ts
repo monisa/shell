@@ -47,6 +47,14 @@ export interface ShellThemeConfig {
   fallbackDarkThemeUrl: string;
 }
 
+export interface ShellBrandingConfig {
+  primaryColor: string;
+  secondaryColor: string;
+  fontFamily: string;
+  fontSize: string;
+  logoUrl: string;
+}
+
 export interface ShellLayoutOptions {
   sidebar: 'left' | 'right';
   sidebarWidth: string;
@@ -62,6 +70,7 @@ export interface ShellConfig {
   configVersion: string;
   layout: ShellLayoutOptions;
   defaultTheme: ShellThemeConfig;
+  branding?: ShellBrandingConfig;
   menu: ShellMenuItem[];
   mfeRegistry: ShellMfeDefinition[];
   notifications?: ShellNotification[];

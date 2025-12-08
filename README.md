@@ -66,6 +66,14 @@ Key fields:
 - `notifications` — banner items shown above the layout.
 - `developer` — fallback theme + dummy user shown in header.
 
+## Client config loader
+
+- `assets/config/client.config.json` is the default runtime contract. Update this file (or drop in additional `<tenant>.config.json` files) to change the shell branding, menu, or MFE registry without rebuilding.
+- `ShellConfigService` fetches the JSON during `APP_INITIALIZER`, blocks bootstrap until the payload is ready, and exposes the structure through `configSignal`/`config$` so any component can react to changes.
+- The shell automatically renders `config.appName` and the primary logo sourced from `config.branding.logoUrl` (or the theme logos if provided).
+- To switch clients at runtime, either replace the `client.config.json` asset on the server or duplicate it as `<tenant>.config.json` and load it via `?tenant=<tenant>` (or call `ShellConfigService.switchTenant('<tenant>')`). The updated JSON applies on the next refresh—no rebuild required.
+- Keep config versioned (`configVersion`) so ops teams know which payload is live, and align `defaultTheme.cacheVersion` with your theme bundle to leverage caching.
+
 ## MFE development flow
 
 1. Register the Web Component in `<tenant>.config.json` (`tagName`, optional `remoteEntry`).

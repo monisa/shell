@@ -16,6 +16,13 @@
     "fallbackLightThemeUrl": "assets/themes/fallback_light.json",
     "fallbackDarkThemeUrl": "assets/themes/fallback_dark.json"
   },
+  "branding": {
+    "primaryColor": "#2563EB",
+    "secondaryColor": "#64748B",
+    "fontFamily": "'Inter', system-ui, sans-serif",
+    "fontSize": "16px",
+    "logoUrl": "assets/logos/octa-logo.svg"
+  },
   "menu": [
     {
       "id": "dashboard",
