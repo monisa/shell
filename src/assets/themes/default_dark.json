@@ -24,8 +24,11 @@
     "font-family-base": "'Inter', system-ui, sans-serif",
     "font-family-headings": "'Inter', system-ui, sans-serif",
     "font-weight-bold": 600,
+    "font-weight-normal": 400,
     "line-height-base": 1.5,
-    "font-size-base": "16px"
+    "font-size-base": "16px",
+    "font-size-sm": "14px",
+    "font-size-lg": "18px"
   },
   "spacing": {
     "xs": "4px",
@@ -42,7 +45,39 @@
   },
   "layout": {
     "sidebar-width": "280px",
-    "header-height": "64px"
+    "header-height": "64px",
+    "content-max-width": "1400px"
+  },
+  "components": {
+    "header": {
+      "background": "#0F172A",
+      "border": "rgba(255, 255, 255, 0.08)",
+      "hover": "rgba(255, 255, 255, 0.06)"
+    },
+    "sidebar": {
+      "background": "#020617",
+      "text": "#E2E8F0",
+      "text-muted": "#64748B",
+      "item-hover": "rgba(255, 255, 255, 0.08)",
+      "item-active": "rgba(255, 255, 255, 0.12)"
+    },
+    "footer": {
+      "background": "#0F172A",
+      "border": "rgba(255, 255, 255, 0.06)",
+      "text": "#94A3B8",
+      "text-muted": "#64748B",
+      "link": "#94A3B8",
+      "separator": "#334155",
+      "tenant-bg": "rgba(255, 255, 255, 0.06)"
+    },
+    "toggle": {
+      "background": "transparent",
+      "hover": "rgba(255, 255, 255, 0.06)",
+      "border": "transparent"
+    },
+    "shell": {
+      "divider": "rgba(255, 255, 255, 0.1)"
+    }
   },
   "icons": {},
   "logos": {

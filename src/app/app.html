@@ -1,32 +1,56 @@
-@if (notifications().length) {
+@if (showNotificationBar() && notifications().length) {
   <octa-notification-bar [notifications]="notifications()"></octa-notification-bar>
 }
 
-<div class="app-shell">
-  <octa-shell-sidebar
-    class="app-shell__sidebar"
-    [menu]="menu()"
-    [logoUrl]="logoUrl()"
-    [appName]="appName()"
-    (itemSelected)="onMenuSelected($event)"
-  ></octa-shell-sidebar>
+<div
+  class="app-shell"
+  [attr.data-sidebar]="showSidebar() ? sidebarPosition() : 'none'"
+  [attr.data-collapsed]="showSidebar() && !isMobile() && sidebarCollapsed()"
+>
+  @if (showSidebar()) {
+    <octa-shell-sidebar
+      class="app-shell__sidebar"
+      [class.open]="sidebarOpen()"
+      [menu]="menu()"
+      [logoUrl]="logoUrl()"
+      [appName]="appName()"
+      [collapsed]="!isMobile() && sidebarCollapsed()"
+      (itemSelected)="onMenuSelected($event)"
+      (toggleCollapse)="toggleSidebar()"
+    ></octa-shell-sidebar>
+
+    <!-- Mobile backdrop overlay -->
+    <div
+      class="app-shell__backdrop"
+      [class.visible]="isMobile() && sidebarOpen()"
+      (click)="closeSidebar()"
+    ></div>
+  }
 
   <div class="app-shell__content">
     <octa-shell-header
       [appName]="appName()"
+      [subtitle]="description()"
       [logoUrl]="logoUrl()"
+      [showNotifications]="showNotifications()"
       [notifications]="notifications()"
       [notificationCount]="notifications().length"
       [user]="user() ?? undefined"
+      [showMenuToggle]="showSidebar()"
+      [sidebarCollapsed]="isMobile() ? !sidebarOpen() : sidebarCollapsed()"
+      (menuToggle)="toggleSidebar()"
     ></octa-shell-header>
 
     <main class="app-shell__viewport">
       <router-outlet />
     </main>
 
-    <octa-shell-footer
-      [text]="layout()?.footerText ?? 'Octa multi-tenant shell'"
-      [version]="config()?.configVersion ?? 'local'"
-    ></octa-shell-footer>
+    @if (showFooter()) {
+      <octa-shell-footer
+        [text]="layout()?.footerText ?? 'Octa multi-tenant shell'"
+        [version]="config()?.configVersion ?? 'local'"
+        [tenant]="tenant()"
+      ></octa-shell-footer>
+    }
   </div>
 </div>

@@ -6,7 +6,9 @@
     "sidebar": "left",
     "sidebarWidth": "300px",
     "footerText": "Expocity Retail Cloud",
-    "showNotifications": true
+    "showNotifications": false,
+    "showSidebar": true,
+    "showFooter": true
   },
   "defaultTheme": {
     "defaultMode": "dark",
@@ -21,7 +23,7 @@
     "secondaryColor": "#9333EA",
     "fontFamily": "'Inter', system-ui, sans-serif",
     "fontSize": "16px",
-    "logoUrl": "assets/logos/expocity-logo.svg"
+    "logoUrl": "https://urbanlab-portal.expocitydubai.com/assets/image/expocity_logo.png"
   },
   "menu": [
     {

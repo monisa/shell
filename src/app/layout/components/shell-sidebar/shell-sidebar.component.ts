@@ -9,13 +9,20 @@ import { ShellMenuItem } from '../../../core/models/shell-config.model';
   standalone: true,
   imports: [CommonModule, RouterLink, RouterLinkActive],
   templateUrl: './shell-sidebar.component.html',
-  styleUrls: ['./shell-sidebar.component.scss']
+  styleUrls: ['./shell-sidebar.component.scss'],
+  host: {
+    '[class.collapsed]': 'collapsed'
+  }
 })
 export class ShellSidebarComponent {
   @Input() menu: ShellMenuItem[] = [];
   @Input() logoUrl?: string;
   @Input() appName = 'Octa shell';
+  @Input() collapsed = false;
   @Output() itemSelected = new EventEmitter<ShellMenuItem>();
+  @Output() toggleCollapse = new EventEmitter<void>();
+
+  readonly currentYear = new Date().getFullYear();
 
   iconVar(icon?: string): string {
     if (!icon) {
@@ -31,5 +38,9 @@ export class ShellSidebarComponent {
     }
 
     this.itemSelected.emit(item);
+  }
+
+  onToggleCollapse(): void {
+    this.toggleCollapse.emit();
   }
 }

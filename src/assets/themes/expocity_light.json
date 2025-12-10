@@ -51,8 +51,8 @@
       "border": "#E9D5FF"
     },
     "sidebar": {
-      "background": "#1E1B4B",
-      "text": "#EDE9FE",
+      "background": "#bba4ed",
+      "text": "#000000",
       "item-hover": "rgba(109, 40, 217, 0.25)"
     },
     "toggle": {

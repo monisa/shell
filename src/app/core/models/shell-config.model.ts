@@ -60,6 +60,9 @@ export interface ShellLayoutOptions {
   sidebarWidth: string;
   footerText?: string;
   showNotifications: boolean;
+  showNotificationBar?: boolean;
+  showSidebar?: boolean;
+  showFooter?: boolean;
 }
 
 export interface ShellConfig {

@@ -8,7 +8,9 @@
     "sidebar": "left",
     "sidebarWidth": "280px",
     "footerText": "Khidmah © 2025",
-    "showNotifications": true
+    "showNotifications": false,
+    "showSidebar": false,
+    "showFooter": true
   },
   "defaultTheme": {
     "defaultMode": "light",
@@ -23,7 +25,7 @@
     "secondaryColor": "#0E7490",
     "fontFamily": "'Inter', system-ui, sans-serif",
     "fontSize": "16px",
-    "logoUrl": "assets/logos/khidmah-logo.svg"
+    "logoUrl": "https://192.168.1.127/themes/custom/enterprise_management_theme/images/logo.svg"
   },
   "menu": [
     {
@@ -110,7 +112,7 @@
     "dummyUser": {
       "name": "Lana Youssef",
       "title": "Tenant Admin",
-      "avatarUrl": "https://avatars.githubusercontent.com/u/9919?v=4"
+      "avatarUrl": "assets/icons/khidmah/user.svg"
     }
   }
 }

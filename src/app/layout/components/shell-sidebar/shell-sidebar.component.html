@@ -1,7 +1,17 @@
-<aside class="shell-sidebar">
-  <div class="shell-sidebar__brand">
-    <img *ngIf="logoUrl" [src]="logoUrl" [alt]="appName" />
-    <span>{{ appName }}</span>
+<aside class="shell-sidebar" [class.shell-sidebar--collapsed]="collapsed">
+  <div class="shell-sidebar__header">
+    <div class="shell-sidebar__brand">
+      <img *ngIf="logoUrl" [src]="logoUrl" [alt]="appName" class="shell-sidebar__logo" />
+      <span class="shell-sidebar__app-name" *ngIf="!collapsed">{{ appName }}</span>
+    </div>
+    <button
+      type="button"
+      class="shell-sidebar__collapse-btn"
+      (click)="onToggleCollapse()"
+      [attr.aria-label]="collapsed ? 'Expand sidebar' : 'Collapse sidebar'"
+    >
+      <span class="shell-sidebar__collapse-icon" [class.rotated]="collapsed">‹</span>
+    </button>
   </div>
 
   <nav class="shell-sidebar__nav">
@@ -11,15 +21,21 @@
           <a
             [routerLink]="item.route"
             routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: item.route === '/' }"
             (click)="onNavigate(item)"
             [attr.target]="item.external ? '_blank' : null"
+            [attr.title]="collapsed ? item.label : null"
           >
             <span class="icon" [style.background-image]="iconVar(item.icon)"></span>
-            <span>{{ item.label }}</span>
-            <span class="badge" *ngIf="item.badge">{{ item.badge }}</span>
+            <span class="label" *ngIf="!collapsed">{{ item.label }}</span>
+            <span class="badge" *ngIf="item.badge && !collapsed">{{ item.badge }}</span>
           </a>
         </li>
       }
     </ul>
   </nav>
+
+  <div class="shell-sidebar__footer" *ngIf="!collapsed">
+    <span class="shell-sidebar__copyright">© {{ currentYear }}</span>
+  </div>
 </aside>

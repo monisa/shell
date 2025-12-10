@@ -1,15 +1,135 @@
+// =============================================================================
+// OCTA SHELL - Global Styles
+// =============================================================================
+// These CSS variables serve as fallback defaults. The ThemeService dynamically
+// injects values from theme.json at runtime, overriding these defaults.
+// Any change to theme.json files reflects immediately without rebuild.
+// =============================================================================
+
 :root {
+  // Color scheme - updated by ThemeService based on theme mode
   color-scheme: light dark;
-  --octa-colors-background: #f1f5f9;
+
+  // -----------------------------------------------------------------------------
+  // Core Colors (Fallback defaults - overridden by theme.json at runtime)
+  // -----------------------------------------------------------------------------
+  --octa-colors-background: #f8fafc;
   --octa-colors-surface: #ffffff;
+  --octa-colors-surface-muted: #f1f5f9;
   --octa-colors-on-surface: #0f172a;
   --octa-colors-on-surface-muted: #475467;
+  --octa-colors-outline: #e2e8f0;
   --octa-colors-primary: #2563eb;
+  --octa-colors-primary-hover: #1d4ed8;
+  --octa-colors-secondary: #64748b;
+  --octa-colors-accent: #f97316;
+  --octa-colors-success: #059669;
+  --octa-colors-danger: #dc2626;
+
+  // -----------------------------------------------------------------------------
+  // Typography (Fallback defaults - overridden by theme.json at runtime)
+  // -----------------------------------------------------------------------------
+  --octa-typography-font-family-base: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --octa-typography-font-family-headings: 'Inter', system-ui, sans-serif;
+  --octa-typography-font-size-base: 16px;
+  --octa-typography-font-size-sm: 14px;
+  --octa-typography-font-size-lg: 18px;
+  --octa-typography-font-weight-normal: 400;
+  --octa-typography-font-weight-bold: 600;
+  --octa-typography-line-height-base: 1.5;
+
+  // -----------------------------------------------------------------------------
+  // Spacing (Fallback defaults - overridden by theme.json at runtime)
+  // -----------------------------------------------------------------------------
+  --octa-spacing-xs: 4px;
+  --octa-spacing-sm: 8px;
+  --octa-spacing-md: 16px;
+  --octa-spacing-lg: 24px;
+  --octa-spacing-xl: 32px;
+
+  // -----------------------------------------------------------------------------
+  // Border Radius (Fallback defaults - overridden by theme.json at runtime)
+  // -----------------------------------------------------------------------------
+  --octa-radius-sm: 6px;
+  --octa-radius-md: 12px;
+  --octa-radius-lg: 18px;
+  --octa-radius-pill: 999px;
+
+  // -----------------------------------------------------------------------------
+  // Layout Dimensions (Fallback defaults - overridden by theme.json at runtime)
+  // -----------------------------------------------------------------------------
   --octa-layout-sidebar-width: 280px;
-  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --octa-layout-header-height: 64px;
+  --octa-layout-content-max-width: 1400px;
+
+  // -----------------------------------------------------------------------------
+  // Component Styles (Fallback defaults - overridden by theme.json at runtime)
+  // -----------------------------------------------------------------------------
+  // Header
+  --octa-components-header-background: var(--octa-colors-surface);
+  --octa-components-header-border: rgba(0, 0, 0, 0.08);
+  --octa-components-header-hover: rgba(0, 0, 0, 0.04);
+
+  // Sidebar
+  --octa-components-sidebar-background: #0f172a;
+  --octa-components-sidebar-text: #e2e8f0;
+  --octa-components-sidebar-text-muted: #94a3b8;
+  --octa-components-sidebar-item-hover: rgba(255, 255, 255, 0.1);
+  --octa-components-sidebar-item-active: rgba(255, 255, 255, 0.15);
+
+  // Footer
+  --octa-components-footer-background: var(--octa-colors-surface);
+  --octa-components-footer-border: rgba(0, 0, 0, 0.06);
+  --octa-components-footer-text: #64748b;
+  --octa-components-footer-text-muted: #94a3b8;
+  --octa-components-footer-link: #64748b;
+  --octa-components-footer-separator: #cbd5e1;
+  --octa-components-footer-tenant-bg: rgba(0, 0, 0, 0.04);
+
+  // Toggle
+  --octa-components-toggle-background: transparent;
+  --octa-components-toggle-hover: rgba(0, 0, 0, 0.04);
+  --octa-components-toggle-border: transparent;
+
+  // Shell divider
+  --octa-components-shell-divider: rgba(15, 23, 42, 0.2);
+
+  // -----------------------------------------------------------------------------
+  // Shadows (Static - not typically in theme.json)
+  // -----------------------------------------------------------------------------
+  --octa-shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --octa-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  --octa-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+
+  // -----------------------------------------------------------------------------
+  // Transitions (Static - not typically in theme.json)
+  // -----------------------------------------------------------------------------
+  --octa-transition-fast: 0.15s ease;
+  --octa-transition-normal: 0.25s ease;
+  --octa-transition-slow: 0.35s ease;
+
+  // Apply typography from CSS variables
+  font-family: var(--octa-typography-font-family-base);
+  font-size: var(--octa-typography-font-size-base);
+  line-height: var(--octa-typography-line-height-base);
 }
 
+// Responsive root font sizes
+@media (max-width: 639px) {
+  :root {
+    font-size: var(--octa-typography-font-size-sm);
+  }
+}
+
+// =============================================================================
+// Reset & Base Styles
+// =============================================================================
 * {
+  box-sizing: border-box;
+}
+
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
@@ -19,10 +139,18 @@ body {
 }
 
 body {
-  margin: 0;
   background: var(--octa-colors-background);
   color: var(--octa-colors-on-surface);
-  font-family: inherit;
+  font-family: var(--octa-typography-font-family-base);
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+// Headings use heading font family from theme
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--octa-typography-font-family-headings);
+  font-weight: var(--octa-typography-font-weight-bold);
 }
 
 button,
@@ -30,4 +158,52 @@ input,
 select,
 textarea {
   font-family: inherit;
+}
+
+// Links
+a {
+  color: var(--octa-colors-primary);
+  text-decoration: none;
+
+  &:hover {
+    color: var(--octa-colors-primary-hover);
+    text-decoration: underline;
+  }
+}
+
+// Focus visible for accessibility
+:focus-visible {
+  outline: 2px solid var(--octa-colors-primary);
+  outline-offset: 2px;
+}
+
+// Smooth scrolling
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+// Reduced motion preference
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+// =============================================================================
+// Theme Mode Data Attributes
+// =============================================================================
+// The ThemeService sets data-theme="light" or data-theme="dark" on body
+// This can be used for additional theme-specific styling if needed
+body[data-theme="dark"] {
+  color-scheme: dark;
+}
+
+body[data-theme="light"] {
+  color-scheme: light;
 }
