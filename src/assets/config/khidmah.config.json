@@ -16,9 +16,7 @@
     "defaultMode": "light",
     "cacheVersion": "2025.01.0",
     "lightThemeUrl": "assets/themes/khidmah_light.json",
-    "darkThemeUrl": "assets/themes/khidmah_dark.json",
-    "fallbackLightThemeUrl": "assets/themes/fallback_light.json",
-    "fallbackDarkThemeUrl": "assets/themes/fallback_dark.json"
+    "darkThemeUrl": "assets/themes/khidmah_dark.json"
   },
   "branding": {
     "primaryColor": "#0F766E",
@@ -108,11 +106,10 @@
     }
   ],
   "developer": {
-    "fallbackTheme": "light",
     "dummyUser": {
       "name": "Lana Youssef",
       "title": "Tenant Admin",
-      "avatarUrl": "assets/icons/khidmah/user.svg"
+      "avatarUrl": "assets/icons/khidmah/user.png"
     }
   }
 }

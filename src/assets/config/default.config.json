@@ -12,9 +12,7 @@
     "defaultMode": "light",
     "cacheVersion": "2025.01.0",
     "lightThemeUrl": "assets/themes/default_light.json",
-    "darkThemeUrl": "assets/themes/default_dark.json",
-    "fallbackLightThemeUrl": "assets/themes/fallback_light.json",
-    "fallbackDarkThemeUrl": "assets/themes/fallback_dark.json"
+    "darkThemeUrl": "assets/themes/default_dark.json"
   },
   "branding": {
     "primaryColor": "#2563EB",
@@ -33,7 +31,6 @@
   ],
   "mfeRegistry": [],
   "developer": {
-    "fallbackTheme": "light",
     "dummyUser": {
       "name": "Octa Admin",
       "title": "Platform Owner"

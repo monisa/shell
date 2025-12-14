@@ -53,15 +53,12 @@ export class ThemeService {
       this.storage.getItem<ThemeMode>(MODE_STORAGE_KEY) ?? config.defaultTheme.defaultMode;
     this.modeSignal.set(initialMode);
 
-    await this.loadTheme(
-      {
-        tenant: config.tenant,
-        mode: initialMode,
-        version: config.defaultTheme.cacheVersion,
-        url: this.resolveThemeUrl(config.defaultTheme, initialMode)
-      },
-      config.defaultTheme
-    );
+    await this.loadTheme({
+      tenant: config.tenant,
+      mode: initialMode,
+      version: config.defaultTheme.cacheVersion,
+      url: this.resolveThemeUrl(config.defaultTheme, initialMode)
+    });
 
     this.attachOsPreferenceListener(config.defaultTheme);
   }
@@ -75,28 +72,22 @@ export class ThemeService {
     this.modeSignal.set(mode);
     this.storage.setItem(MODE_STORAGE_KEY, mode);
 
-    await this.loadTheme(
-      {
-        tenant: this.tenantSignal(),
-        mode,
-        version: themeConfig?.cacheVersion,
-        url: this.resolveThemeUrl(themeConfig, mode)
-      },
-      themeConfig
-    );
+    await this.loadTheme({
+      tenant: this.tenantSignal(),
+      mode,
+      version: themeConfig?.cacheVersion,
+      url: this.resolveThemeUrl(themeConfig, mode)
+    });
   }
 
   async refresh(themeConfig: ShellThemeConfig, forceNetwork = false): Promise<void> {
-    await this.loadTheme(
-      {
-        tenant: this.tenantSignal(),
-        mode: this.modeSignal(),
-        version: themeConfig?.cacheVersion,
-        url: this.resolveThemeUrl(themeConfig, this.modeSignal()),
-        forceNetwork
-      },
-      themeConfig
-    );
+    await this.loadTheme({
+      tenant: this.tenantSignal(),
+      mode: this.modeSignal(),
+      version: themeConfig?.cacheVersion,
+      url: this.resolveThemeUrl(themeConfig, this.modeSignal()),
+      forceNetwork
+    });
   }
 
   getIconUrl(name: string): string | undefined {
@@ -107,10 +98,7 @@ export class ThemeService {
     return this.logoSignal()[name]?.value;
   }
 
-  private async loadTheme(
-    request: ThemeRequest & { forceNetwork?: boolean },
-    themeConfig?: ShellThemeConfig
-  ): Promise<void> {
+  private async loadTheme(request: ThemeRequest & { forceNetwork?: boolean }): Promise<void> {
     const themeUrl = request.url ?? this.buildThemeUrl(request);
     const cached = !request.forceNetwork
       ? this.readCache(themeUrl, request.version)
@@ -127,9 +115,7 @@ export class ThemeService {
       this.writeCache(themeUrl, request.version ?? theme.meta.version, theme);
     } catch (error) {
       this.logger.error(`Failed to load theme from ${themeUrl}`, error);
-      if (!cached) {
-        await this.applyFallbackTheme(themeConfig, request.mode);
-      }
+      // CSS variable fallbacks in styles.scss will handle missing themes
     }
   }
 
@@ -297,38 +283,12 @@ export class ThemeService {
     this.storage.setItem(THEME_CACHE_KEY, payload);
   }
 
-  private async applyFallbackTheme(
-    themeConfig: ShellThemeConfig | undefined,
-    mode: ThemeMode
-  ): Promise<void> {
-    const fallbackUrl = this.resolveFallbackUrl(themeConfig, mode);
-    if (!fallbackUrl) {
-      this.logger.warn('No fallback theme configured.');
-      return;
-    }
-
-    try {
-      const fallbackTheme = await firstValueFrom(this.http.get<ThemeDefinition>(fallbackUrl));
-      this.applyTheme(fallbackTheme);
-    } catch (fallbackError) {
-      this.logger.error(`Failed to load fallback theme from ${fallbackUrl}`, fallbackError);
-    }
-  }
-
   private resolveThemeUrl(themeConfig: ShellThemeConfig | undefined, mode: ThemeMode): string {
     if (!themeConfig) {
       return `assets/themes/default_${mode}.json`;
     }
 
     return mode === 'dark' ? themeConfig.darkThemeUrl : themeConfig.lightThemeUrl;
-  }
-
-  private resolveFallbackUrl(themeConfig: ShellThemeConfig | undefined, mode: ThemeMode): string {
-    if (!themeConfig) {
-      return `assets/themes/fallback_${mode}.json`;
-    }
-
-    return mode === 'dark' ? themeConfig.fallbackDarkThemeUrl : themeConfig.fallbackLightThemeUrl;
   }
 
   private buildThemeUrl(request: ThemeRequest): string {

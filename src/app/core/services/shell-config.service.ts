@@ -65,7 +65,7 @@ export class ShellConfigService {
       }
     }
 
-    return this.storage.getItem<string>(STORAGE_KEY) ?? 'client';
+    return this.storage.getItem<string>(STORAGE_KEY) ?? 'default';
   }
 
   private setConfig(config: ShellConfig): void {
