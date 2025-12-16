@@ -43,8 +43,6 @@ export interface ShellThemeConfig {
   cacheVersion: string;
   lightThemeUrl: string;
   darkThemeUrl: string;
-  fallbackLightThemeUrl: string;
-  fallbackDarkThemeUrl: string;
 }
 
 export interface ShellBrandingConfig {
@@ -78,7 +76,6 @@ export interface ShellConfig {
   mfeRegistry: ShellMfeDefinition[];
   notifications?: ShellNotification[];
   developer?: {
-    fallbackTheme: ThemeMode;
     dummyUser: {
       name: string;
       title: string;

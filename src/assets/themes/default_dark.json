@@ -55,7 +55,8 @@
       "hover": "rgba(255, 255, 255, 0.06)"
     },
     "sidebar": {
-      "background": "#020617",
+      "background": "#0F172A",
+      "border": "rgba(255, 255, 255, 0.08)",
       "text": "#E2E8F0",
       "text-muted": "#64748B",
       "item-hover": "rgba(255, 255, 255, 0.08)",
@@ -79,7 +80,83 @@
       "divider": "rgba(255, 255, 255, 0.1)"
     }
   },
-  "icons": {},
+  "icons": {
+    "dashboard": {
+      "type": "svg",
+      "value": "assets/icons/dark/dashboard.svg",
+      "description": "Dashboard (FILLED - dark mode)"
+    },
+    "settings": {
+      "type": "svg",
+      "value": "assets/icons/dark/settings.svg",
+      "description": "Settings (FILLED - dark mode)"
+    },
+    "users": {
+      "type": "svg",
+      "value": "assets/icons/dark/users.svg",
+      "description": "Users (FILLED - dark mode)"
+    },
+    "reports": {
+      "type": "svg",
+      "value": "assets/icons/dark/reports.svg",
+      "description": "Reports (FILLED - dark mode)"
+    },
+    "notifications": {
+      "type": "svg",
+      "value": "assets/icons/dark/notifications.svg",
+      "description": "Notifications (FILLED with badge - dark mode)"
+    },
+    "search": {
+      "type": "svg",
+      "value": "assets/icons/dark/search.svg",
+      "description": "Search (FILLED - dark mode)"
+    },
+    "trash": {
+      "type": "svg",
+      "value": "assets/icons/dark/trash.svg",
+      "description": "Trash (FILLED - dark mode)"
+    },
+    "edit": {
+      "type": "svg",
+      "value": "assets/icons/dark/edit.svg",
+      "description": "Edit (FILLED - dark mode)"
+    },
+    "plus": {
+      "type": "svg",
+      "value": "assets/icons/dark/plus.svg",
+      "description": "Plus (FILLED circle - dark mode)"
+    },
+    "check": {
+      "type": "svg",
+      "value": "assets/icons/dark/check.svg",
+      "description": "Check (FILLED circle - dark mode)"
+    },
+    "close": {
+      "type": "svg",
+      "value": "assets/icons/dark/close.svg",
+      "description": "Close (FILLED circle - dark mode)"
+    },
+    "chevronDown": {
+      "type": "svg",
+      "value": "assets/icons/dark/chevron-down.svg",
+      "description": "Chevron down (FILLED arrow - dark mode)"
+    },
+    "chevronRight": {
+      "type": "svg",
+      "value": "assets/icons/dark/chevron-right.svg",
+      "description": "Chevron right (FILLED arrow - dark mode)"
+    },
+    "menu": {
+      "type": "svg",
+      "value": "assets/icons/dark/menu.svg",
+      "description": "Menu (FILLED bars - dark mode)"
+    },
+    "home": {
+      "type": "svg",
+      "value": "assets/icons/dark/home.svg",
+      "description": "Home (FILLED - dark mode)"
+    }
+  },
   "logos": {
     "main": {
       "type": "svg",

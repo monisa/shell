@@ -55,8 +55,8 @@
       "hover": "rgba(0, 0, 0, 0.04)"
     },
     "sidebar": {
-      "background": "#0F172A",
-      "text": "#E2E8F0",
+      "background": "#FFFFFF",
+      "text": "#0F172A",
       "text-muted": "#94A3B8",
       "item-hover": "rgba(255, 255, 255, 0.1)",
       "item-active": "rgba(255, 255, 255, 0.15)"
@@ -79,7 +79,83 @@
       "divider": "rgba(15, 23, 42, 0.2)"
     }
   },
-  "icons": {},
+  "icons": {
+    "dashboard": {
+      "type": "svg",
+      "value": "assets/icons/common/dashboard.svg",
+      "description": "Dashboard/home overview"
+    },
+    "settings": {
+      "type": "svg",
+      "value": "assets/icons/common/settings.svg",
+      "description": "Settings/configuration"
+    },
+    "users": {
+      "type": "svg",
+      "value": "assets/icons/common/users.svg",
+      "description": "User management"
+    },
+    "reports": {
+      "type": "svg",
+      "value": "assets/icons/common/reports.svg",
+      "description": "Reports/documents"
+    },
+    "notifications": {
+      "type": "svg",
+      "value": "assets/icons/common/notifications.svg",
+      "description": "Notifications/alerts"
+    },
+    "search": {
+      "type": "svg",
+      "value": "assets/icons/common/search.svg",
+      "description": "Search"
+    },
+    "trash": {
+      "type": "svg",
+      "value": "assets/icons/common/trash.svg",
+      "description": "Delete/remove"
+    },
+    "edit": {
+      "type": "svg",
+      "value": "assets/icons/common/edit.svg",
+      "description": "Edit/modify"
+    },
+    "plus": {
+      "type": "svg",
+      "value": "assets/icons/common/plus.svg",
+      "description": "Add/create"
+    },
+    "check": {
+      "type": "svg",
+      "value": "assets/icons/common/check.svg",
+      "description": "Confirm/success"
+    },
+    "close": {
+      "type": "svg",
+      "value": "assets/icons/common/close.svg",
+      "description": "Close/cancel"
+    },
+    "chevronDown": {
+      "type": "svg",
+      "value": "assets/icons/common/chevron-down.svg",
+      "description": "Expand/dropdown"
+    },
+    "chevronRight": {
+      "type": "svg",
+      "value": "assets/icons/common/chevron-right.svg",
+      "description": "Navigate/next"
+    },
+    "menu": {
+      "type": "svg",
+      "value": "assets/icons/common/menu.svg",
+      "description": "Menu/hamburger"
+    },
+    "home": {
+      "type": "svg",
+      "value": "assets/icons/common/home.svg",
+      "description": "Home"
+    }
+  },
   "logos": {
     "main": {
       "type": "svg",

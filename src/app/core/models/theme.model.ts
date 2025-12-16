@@ -41,9 +41,32 @@ export interface ThemeRequest {
   url?: string;
 }
 
+/**
+ * Single theme cache entry
+ */
 export interface ThemeCacheEntry {
   themeUrl: string;
   themeData: ThemeDefinition;
   version: string;
   timestamp: number;
 }
+
+/**
+ * Multi-theme cache storage structure
+ * Supports caching both light and dark themes per tenant
+ */
+export interface ThemeCacheStorage {
+  /** Cache entries keyed by theme URL */
+  entries: Record<string, ThemeCacheEntry>;
+  /** Last cleanup timestamp */
+  lastCleanup: number;
+}
+
+/**
+ * Cache status for debugging/logging
+ */
+export type ThemeCacheStatus = 
+  | 'hit'           // Fresh cache found
+  | 'stale'         // Cache found but expired (will background refresh)
+  | 'miss'          // No cache found
+  | 'version_mismatch'; // Cache version doesn't match

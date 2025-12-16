@@ -1,6 +1,7 @@
 import { Routes } from '@angular/router';
 
 import { DashboardPageComponent } from './features/dashboard/dashboard-page.component';
+import { IconDemoComponent } from './features/icon-demo/icon-demo.component';
 import { MfeHostComponent } from './shared/components/mfe-host/mfe-host.component';
 import { NotFoundComponent } from './shared/components/not-found/not-found.component';
 import { StyleGuideComponent } from './shared/components/style-guide/style-guide.component';
@@ -17,6 +18,10 @@ export const routes: Routes = [
   {
     path: 'style-guide',
     component: StyleGuideComponent
+  },
+  {
+    path: 'icon-demo',
+    component: IconDemoComponent
   },
   {
     path: '**',

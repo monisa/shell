@@ -1,0 +1,14 @@
+ <svg  width="40" height="40" viewBox="0 0 40 40" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <rect x="0.5" y="0.5" width="38" height="38" rx="5.5" fill="white" stroke="#D8D8D8" />
+            <path d="M21 11.1001C25.667 16.0271 25.667 23.9731 21 28.9001" stroke="#084FFF" stroke-linecap="round"
+              stroke-linejoin="round" />
+            <path d="M20.9998 28.9001C16.3328 23.9731 16.3328 16.0271 20.9998 11.1001" stroke="#084FFF"
+              stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M21 11C25.982 11 30 15.018 30 20C30 24.982 25.982 29 21 29" stroke="#084FFF" stroke-linecap="round"
+              stroke-linejoin="round" />
+            <path d="M21 29C16.018 29 12 24.982 12 20C12 15.018 16.018 11 21 11" stroke="#084FFF" stroke-linecap="round"
+              stroke-linejoin="round" />
+            <path d="M12.5098 17H29.4898" stroke="#084FFF" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M12.5098 23H29.4898" stroke="#084FFF" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>

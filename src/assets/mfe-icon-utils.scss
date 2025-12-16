@@ -1,0 +1,107 @@
+/**
+ * MFE Icon Utilities
+ * ==================
+ * 
+ * SCSS mixins for using shell icons in MFEs without local assets.
+ * Import this file in your MFE's styles.
+ * 
+ * USAGE:
+ *   @import 'path/to/mfe-icon-utils.scss';
+ *   
+ *   .my-icon { @include octa-icon('dashboard'); }
+ *   .colored-icon { @include octa-icon('edit', 20px, var(--octa-colors-primary)); }
+ */
+
+/// Creates an icon using CSS mask (allows color inheritance)
+/// @param {String} $name - Icon name (e.g., 'dashboard', 'edit', 'trash')
+/// @param {Length} $size - Icon size [24px]
+/// @param {Color} $color - Icon color [currentColor]
+@mixin octa-icon($name, $size: 24px, $color: currentColor) {
+  display: inline-block;
+  width: $size;
+  height: $size;
+  background-color: $color;
+  -webkit-mask-image: var(--octa-icons-#{$name});
+  mask-image: var(--octa-icons-#{$name});
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+}
+
+/// Creates an icon as background image (no color control)
+/// @param {String} $name - Icon name
+/// @param {Length} $size - Icon size [24px]
+@mixin octa-icon-bg($name, $size: 24px) {
+  display: inline-block;
+  width: $size;
+  height: $size;
+  background-image: var(--octa-icons-#{$name});
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/// Icon button helper
+/// @param {String} $name - Icon name
+/// @param {Length} $size - Button size [32px]
+/// @param {Length} $icon-size - Icon size [20px]
+@mixin octa-icon-button($name, $size: 32px, $icon-size: 20px) {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: $size;
+  height: $size;
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  border-radius: var(--octa-radius-sm, 4px);
+  transition: background var(--octa-transition-fast, 150ms ease);
+  
+  &::before {
+    content: '';
+    @include octa-icon($name, $icon-size);
+  }
+  
+  &:hover {
+    background: var(--octa-colors-surface-muted, rgba(0,0,0,0.05));
+  }
+}
+
+// =============================================================================
+// UTILITY CLASSES (optional - can use directly in HTML)
+// =============================================================================
+
+// Generate utility classes for common icons
+$octa-icon-names: (
+  'dashboard',
+  'home',
+  'settings',
+  'users',
+  'reports',
+  'notifications',
+  'search',
+  'edit',
+  'trash',
+  'plus',
+  'check',
+  'close',
+  'menu',
+  'chevron-down',
+  'chevron-right'
+);
+
+@each $name in $octa-icon-names {
+  .octa-icon-#{$name} {
+    @include octa-icon($name);
+  }
+}
+
+// Size variants
+.octa-icon--sm { width: 16px; height: 16px; }
+.octa-icon--md { width: 24px; height: 24px; }
+.octa-icon--lg { width: 32px; height: 32px; }
+

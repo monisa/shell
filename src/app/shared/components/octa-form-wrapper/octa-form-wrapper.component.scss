@@ -1,0 +1,23 @@
+// OctaFormWrapper - Host container for form web components
+// The web component will inherit CSS variables from the shell theme
+
+:host {
+  display: block;
+  width: 100%;
+}
+
+.octa-form-wrapper {
+  &__host {
+    width: 100%;
+    min-height: 200px;
+  }
+
+  &__loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 200px;
+    color: var(--octa-colors-on-surface-muted);
+  }
+}
+

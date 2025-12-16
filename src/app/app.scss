@@ -7,7 +7,7 @@ $breakpoint-xl: 1280px;
 .app-shell {
   display: grid;
   grid-template-columns: var(--octa-layout-sidebar-width, 280px) 1fr;
-  height: 100vh;
+  //height: 100vh;
   overflow: hidden;
   position: relative;
   transition: grid-template-columns 0.3s ease;

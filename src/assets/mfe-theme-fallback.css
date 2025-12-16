@@ -1,0 +1,205 @@
+/**
+ * MFE Theme Fallback CSS
+ * =======================
+ * 
+ * This file provides CSS variable fallbacks for MFE local development.
+ * When running inside the shell, these are overridden by ThemeService.
+ * 
+ * USAGE IN MFE:
+ * 1. Import this file in your MFE's styles.css/scss
+ * 2. Use CSS variables in your components: var(--octa-colors-primary)
+ * 3. The shell will override these values at runtime
+ * 
+ * IMPORTANT:
+ * - MFEs must NOT load theme.json directly
+ * - MFEs must ONLY use CSS variables for theming
+ * - This file is for LOCAL DEVELOPMENT fallback only
+ */
+
+:root,
+:host {
+  /* =========================================================================
+   * COLOR TOKENS
+   * ========================================================================= */
+  
+  /* Background & Surface */
+  --octa-colors-background: #f8fafc;
+  --octa-colors-surface: #ffffff;
+  --octa-colors-surface-muted: #f1f5f9;
+  
+  /* Text Colors */
+  --octa-colors-on-surface: #0f172a;
+  --octa-colors-on-surface-muted: #475467;
+  
+  /* Border & Outline */
+  --octa-colors-outline: #e2e8f0;
+  --octa-colors-border: #e2e8f0;
+  
+  /* Brand Colors */
+  --octa-colors-primary: #2563eb;
+  --octa-colors-primary-hover: #1d4ed8;
+  --octa-colors-primary-light: #dbeafe;
+  --octa-colors-secondary: #64748b;
+  --octa-colors-accent: #f97316;
+  
+  /* Semantic Colors */
+  --octa-colors-success: #059669;
+  --octa-colors-success-light: #d1fae5;
+  --octa-colors-warning: #d97706;
+  --octa-colors-warning-light: #fef3c7;
+  --octa-colors-danger: #dc2626;
+  --octa-colors-danger-light: #fee2e2;
+  --octa-colors-info: #0284c7;
+  --octa-colors-info-light: #e0f2fe;
+
+  /* =========================================================================
+   * TYPOGRAPHY TOKENS
+   * ========================================================================= */
+  --octa-typography-font-family-base: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --octa-typography-font-family-headings: 'Inter', system-ui, sans-serif;
+  --octa-typography-font-family-mono: 'Fira Code', 'Consolas', monospace;
+  
+  --octa-typography-font-size-xs: 12px;
+  --octa-typography-font-size-sm: 14px;
+  --octa-typography-font-size-base: 16px;
+  --octa-typography-font-size-lg: 18px;
+  --octa-typography-font-size-xl: 20px;
+  --octa-typography-font-size-2xl: 24px;
+  --octa-typography-font-size-3xl: 30px;
+  
+  --octa-typography-font-weight-normal: 400;
+  --octa-typography-font-weight-medium: 500;
+  --octa-typography-font-weight-semibold: 600;
+  --octa-typography-font-weight-bold: 700;
+  
+  --octa-typography-line-height-tight: 1.25;
+  --octa-typography-line-height-base: 1.5;
+  --octa-typography-line-height-relaxed: 1.75;
+
+  /* =========================================================================
+   * SPACING TOKENS
+   * ========================================================================= */
+  --octa-spacing-xs: 4px;
+  --octa-spacing-sm: 8px;
+  --octa-spacing-md: 16px;
+  --octa-spacing-lg: 24px;
+  --octa-spacing-xl: 32px;
+  --octa-spacing-2xl: 48px;
+  --octa-spacing-3xl: 64px;
+
+  /* =========================================================================
+   * BORDER RADIUS TOKENS
+   * ========================================================================= */
+  --octa-radius-none: 0;
+  --octa-radius-sm: 4px;
+  --octa-radius-md: 8px;
+  --octa-radius-lg: 12px;
+  --octa-radius-xl: 16px;
+  --octa-radius-full: 9999px;
+
+  /* =========================================================================
+   * SHADOW TOKENS
+   * ========================================================================= */
+  --octa-shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --octa-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --octa-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --octa-shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+
+  /* =========================================================================
+   * TRANSITION TOKENS
+   * ========================================================================= */
+  --octa-transition-fast: 150ms ease;
+  --octa-transition-normal: 250ms ease;
+  --octa-transition-slow: 350ms ease;
+
+  /* =========================================================================
+   * Z-INDEX TOKENS
+   * ========================================================================= */
+  --octa-z-dropdown: 1000;
+  --octa-z-sticky: 1020;
+  --octa-z-fixed: 1030;
+  --octa-z-modal-backdrop: 1040;
+  --octa-z-modal: 1050;
+  --octa-z-popover: 1060;
+  --octa-z-tooltip: 1070;
+
+  /* =========================================================================
+   * COMPONENT TOKENS (Common across MFEs)
+   * ========================================================================= */
+  
+  /* Buttons */
+  --octa-button-primary-bg: var(--octa-colors-primary);
+  --octa-button-primary-text: #ffffff;
+  --octa-button-primary-hover: var(--octa-colors-primary-hover);
+  --octa-button-secondary-bg: var(--octa-colors-surface);
+  --octa-button-secondary-text: var(--octa-colors-on-surface);
+  --octa-button-secondary-border: var(--octa-colors-outline);
+  
+  /* Inputs */
+  --octa-input-bg: var(--octa-colors-surface);
+  --octa-input-border: var(--octa-colors-outline);
+  --octa-input-text: var(--octa-colors-on-surface);
+  --octa-input-placeholder: var(--octa-colors-on-surface-muted);
+  --octa-input-focus-border: var(--octa-colors-primary);
+  --octa-input-error-border: var(--octa-colors-danger);
+  
+  /* Cards */
+  --octa-card-bg: var(--octa-colors-surface);
+  --octa-card-border: var(--octa-colors-outline);
+  --octa-card-shadow: var(--octa-shadow-sm);
+  
+  /* Tables */
+  --octa-table-header-bg: var(--octa-colors-surface-muted);
+  --octa-table-row-hover: var(--octa-colors-surface-muted);
+  --octa-table-border: var(--octa-colors-outline);
+
+  /* =========================================================================
+   * ICON TOKENS
+   * =========================================================================
+   * Icons are loaded from theme.json and exposed as CSS variables.
+   * In production, these are overridden by the shell's ThemeService.
+   * For local development, these fallback paths are used.
+   * 
+   * USAGE:
+   *   background-image: var(--octa-icons-dashboard);
+   *   -webkit-mask-image: var(--octa-icons-settings);
+   * ========================================================================= */
+  
+  /* Navigation Icons */
+  --octa-icons-dashboard: url("assets/icons/common/dashboard.svg");
+  --octa-icons-home: url("assets/icons/common/home.svg");
+  --octa-icons-settings: url("assets/icons/common/settings.svg");
+  --octa-icons-users: url("assets/icons/common/users.svg");
+  --octa-icons-reports: url("assets/icons/common/reports.svg");
+  --octa-icons-menu: url("assets/icons/common/menu.svg");
+  
+  /* Action Icons */
+  --octa-icons-search: url("assets/icons/common/search.svg");
+  --octa-icons-plus: url("assets/icons/common/plus.svg");
+  --octa-icons-edit: url("assets/icons/common/edit.svg");
+  --octa-icons-trash: url("assets/icons/common/trash.svg");
+  --octa-icons-check: url("assets/icons/common/check.svg");
+  --octa-icons-close: url("assets/icons/common/close.svg");
+  
+  /* UI Icons */
+  --octa-icons-notifications: url("assets/icons/common/notifications.svg");
+  --octa-icons-chevron-down: url("assets/icons/common/chevron-down.svg");
+  --octa-icons-chevron-right: url("assets/icons/common/chevron-right.svg");
+}
+
+/* Dark mode support via data attribute */
+:root[data-theme="dark"],
+:host-context([data-theme="dark"]) {
+  --octa-colors-background: #0f172a;
+  --octa-colors-surface: #1e293b;
+  --octa-colors-surface-muted: #334155;
+  --octa-colors-on-surface: #f1f5f9;
+  --octa-colors-on-surface-muted: #94a3b8;
+  --octa-colors-outline: #475569;
+  --octa-colors-border: #475569;
+  
+  --octa-colors-primary: #3b82f6;
+  --octa-colors-primary-hover: #60a5fa;
+  --octa-colors-primary-light: #1e3a5f;
+}
+

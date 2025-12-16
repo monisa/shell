@@ -1,0 +1,5 @@
+<svg fill="none" class="icon-field-add" viewBox="0 0 20 19"  xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd"  d="M17 18H3C1.895 18 1 17.1547 1 16.1111V2.88889C1 1.84528 1.895 1 3 1H17C18.105 1 19 1.84528 19 2.88889V16.1111C19 17.1547 18.105 18 17 18Z" stroke="#D8D8D8"/>
+                    <path d="M7 10H13" stroke="#084FFF"/>
+                    <path d="M10 7V13" stroke="#084FFF"/>
+                  </svg>

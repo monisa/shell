@@ -9,7 +9,13 @@ import { ShellConfigService } from '../../../core/services/shell-config.service'
   standalone: true,
   imports: [TitleCasePipe],
   template: `
-    <button type="button" class="theme-toggle" (click)="toggleMode()">
+    <button 
+      type="button" 
+      class="theme-toggle" 
+      (click)="toggleMode()"
+      (dblclick)="clearCacheAndReload()"
+      title="Click to toggle theme. Double-click to clear cache and reload."
+    >
       <span class="theme-toggle__icon" [attr.data-mode]="mode()">
         {{ mode() === 'dark' ? '🌙' : '☀️' }}
       </span>
@@ -54,5 +60,14 @@ export class ThemeToggleComponent {
       return;
     }
     await this.themeService.toggleMode(config.defaultTheme);
+  }
+
+  /**
+   * Double-click to clear theme cache and reload
+   * Useful for development/testing
+   */
+  clearCacheAndReload(): void {
+    this.themeService.clearCache();
+    window.location.reload();
   }
 }
